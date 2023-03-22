@@ -22,4 +22,20 @@ window.onload = function () {
     }
     // mbWrap.classList.add("active");
   });
+  // 비주얼슬라이드
+  new Swiper(".swVisual", {
+    loop: true,
+    speed: 800,
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      // css에 맞게 이름 변경
+      nextEl: ".sw-visual-next",
+      prevEl: ".sw-visual-prev",
+    },
+  });
+
+  //
 };
