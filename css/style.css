@@ -533,12 +533,19 @@ body::-webkit-scrollbar-track {
 .swVisual-wrap {
   position: relative;
   display: block;
+
+  width: 83.3333%;
+  margin: 0 auto;
+  overflow: hidden;
+
   margin-top: -40px;
+
+  height: 720px;
 }
 
 .swVisual {
   width: 100%;
-  height: 720px;
+  height: 100%;
 }
 .v-box {
   position: relative;
@@ -592,7 +599,7 @@ body::-webkit-scrollbar-track {
     right: auto;
     bottom: auto;
   }
-  .swVisual {
+  .swVisual-wrap {
     height: 648px;
   }
 }
@@ -606,15 +613,8 @@ body::-webkit-scrollbar-track {
     line-height: 25px;
     margin-top: 20px;
   }
-  .swVisual {
+  .swVisual-wrap {
     height: 576px;
-  }
-  .visual-wrap h2 {
-    font-size: 35px;
-    line-height: 40px;
-  }
-  .visual-wrap h3 {
-    font-size: 35px;
   }
 }
 
@@ -622,6 +622,7 @@ body::-webkit-scrollbar-track {
   .visual .inner {
     padding-top: 170px;
   }
+
   .sw-visual-control {
     margin-right: 10%;
   }
@@ -644,20 +645,122 @@ body::-webkit-scrollbar-track {
   .sw-visual-nav {
     display: none;
   }
-  .swVisual {
+  .swVisual-wrap {
     height: 400px;
   }
 }
+
 @media screen and (max-width: 540px) {
   .visual .inner {
     padding-top: 140px;
+  }
+
+  .visual-wrap h2 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+  .visual-wrap h3 {
+    font-size: 35px;
   }
 }
 /* 소개 */
 .about {
   position: relative;
   display: block;
+  padding: 10.41vw 0;
 }
+.about .inner {
+  width: 83.3333%;
+  max-width: 83.3333%;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+}
+.about-left {
+  width: 50%;
+}
+
+.about-left span {
+  display: block;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.about-left h2 {
+  font-size: 70px;
+  line-height: 80px;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-bottom: 60px;
+}
+.about-left p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 30px;
+  width: 64.5%;
+}
+.about-left a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 12px;
+  margin-top: 100px;
+
+  min-width: 180px;
+  max-width: 180px;
+  height: 60px;
+  padding: 0 80px 0 30px;
+  background-color: #131313;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 60px;
+  text-align: left;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+
+  border: 1px solid #000;
+}
+.about-left a::after {
+  content: "";
+  display: block;
+  width: 40px;
+  min-width: 40px;
+  height: 3px;
+  background-color: #fff;
+  margin-left: auto;
+}
+.about-left a:hover {
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+}
+.about-left a:hover:after {
+  background-color: #000;
+}
+
+.about-right {
+  width: 45%;
+}
+.about-right img {
+  width: 100%;
+}
+@media screen and (max-width: 1680px) {
+}
+@media screen and (max-width: 1440px) {
+}
+@media screen and (max-width: 1280px) {
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 900px) {
+}
+@media screen and (max-width: 760px) {
+}
+@media screen and (max-width: 540px) {
+}
+/* 텍스트 효과 */
 .effect {
   position: relative;
   display: block;

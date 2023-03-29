@@ -87,4 +87,47 @@ window.onload = function () {
   if (slideTotal > 0) {
     changeSwVisual(0);
   }
+
+  // / Visual Swiper 스케일 효과
+  // window 의 안쪽(웹브라우저 안쪽만) 높이
+  let winHeight = window.innerHeight;
+
+  // 수직으로 몇 픽셀 만큼 스크롤 되었는지 파악
+  let scTop = window.scrollY || window.pageYOffset;
+  // 변화를 줄 대상
+  let swVisualWrap = document.querySelector(".swVisual-wrap");
+  // 변화를 적용할 함수
+  // 변화를 적용할 함수
+  function swVisualMove() {
+    // scale 적용 비율값
+    // transform: scale(ratio)
+    let ratio = 1 + scTop * 0.001;
+    // y 축 적용
+    // transform: translateY(transY)
+    let transY = scTop * 0.05;
+    // 한계값 설정
+    if (ratio > 1.2) {
+      ratio = 1.2;
+    }
+    if (transY > 10) {
+      transY = 10;
+    }
+    // if (ratio > 1.2) ratio = 1.2;
+    // if (transY > 10) transY = 10;
+    // 최종 transform 에 적용할 글자 완성
+    let cssTxt = `translateY(${transY}%) scale(${ratio})`;
+    // console.log(cssTxt);
+    swVisualWrap.style.transform = cssTxt;
+  }
+  // 기준값 갱신
+  window.addEventListener("scroll", function () {
+    winHeight = window.innerHeight;
+    scTop = window.scrollY || window.pageYOffset;
+    swVisualMove();
+  });
+  window.addEventListener("resize", function () {
+    winHeight = window.innerHeight;
+    scTop = window.scrollY || window.pageYOffset;
+    swVisualMove();
+  });
 };
