@@ -7,8 +7,8 @@
 
 ## 개선사항
 
--코드 최적화
--Vanila Script 적용
+- 코드 최적화
+- Vanila Scripit 적용
 
 ## 사용기술
 

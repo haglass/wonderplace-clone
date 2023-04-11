@@ -99,11 +99,18 @@ window.onload = function () {
       clickable: true,
     },
     effect: "fade",
+    speed: 1000,
     autoplay: {
-      delay: 1000,
+      delay: 2000,
       disableOnInteraction: false,
     },
   });
+
+  swBrand.on("slideChangeTransitionStart", function () {
+    // console.log("slide changed", this.realIndex);
+    changeSwBrandFocus(this.realIndex);
+  });
+
   swBrandBts.forEach((item, index) => {
     item.addEventListener("click", function (e) {
       // href 막기
@@ -128,6 +135,16 @@ window.onload = function () {
     // 하나만 포커스(active) 클래스 적용
     swBrandBts[index].classList.add("active");
   }
+
+  // 자동 플레이 막기/재실행
+  const swBrandWrap = document.querySelector(".swBrandWrap");
+
+  swBrandWrap.addEventListener("mouseenter", function () {
+    swBrand.autoplay.stop();
+  });
+  swBrandWrap.addEventListener("mouseleave", function () {
+    swBrand.autoplay.start();
+  });
 
   // Visual Swiper 스케일 효과
   // 참조 https://bkstudio.tistory.com/6
